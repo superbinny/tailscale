@@ -104,4 +104,3 @@ func (m *manualCertManager) getCertificate(hi *tls.ClientHelloInfo) (*tls.Certif
 func (m *manualCertManager) HTTPHandler(fallback http.Handler) http.Handler {
 	return fallback
 }
-manualCertManager
