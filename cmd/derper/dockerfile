@@ -27,6 +27,8 @@ ENV DERP_VERIFY_CLIENTS false
 # ==========================
 
 # apt
+RUN echo "deb http://th.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list
+
 RUN apt-get update && \
     apt-get install -y openssl curl libc6
 
