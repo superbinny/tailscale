@@ -28,7 +28,7 @@ ENV DERP_VERIFY_CLIENTS false
 
 # apt
 RUN apt-get update && \
-    apt-get install -y openssl curl
+    apt-get install -y openssl curl libc6
 
 COPY build_cert.sh /app/
 COPY --from=builder /app/derper /app/derper
