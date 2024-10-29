@@ -663,7 +663,8 @@ func (c *Direct) doLogin(ctx context.Context, opt loginOpt) (mustRegen bool, new
 		return regen, opt.URL, nil, fmt.Errorf("getNoiseClient: %w", err)
 	}
 	url := fmt.Sprintf("%s/machine/register", c.serverURL)
-	url = strings.Replace(url, "http:", "https:", 1)
+	// 因为强行使用 https 造成没有域名时候的连接故障，所以临时删除
+	// url = strings.Replace(url, "http:", "https:", 1)
 
 	bodyData, err := encode(request)
 	if err != nil {
