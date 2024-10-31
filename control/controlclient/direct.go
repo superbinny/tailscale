@@ -933,7 +933,8 @@ func (c *Direct) sendMapRequest(ctx context.Context, isStreaming bool, nu Netmap
 		return fmt.Errorf("getNoiseClient: %w", err)
 	}
 	url := fmt.Sprintf("%s/machine/map", serverURL)
-	url = strings.Replace(url, "http:", "https:", 1)
+	//Comment by binny
+	//url = strings.Replace(url, "http:", "https:", 1)
 
 	// Create a watchdog timer that breaks the connection if we don't receive a
 	// MapResponse from the network at least once every two minutes. The
